@@ -13,6 +13,16 @@ window.addEventListener("load", () => {
 
 const themes = [
   {
+    background: "#fff",
+    color: "#000",
+    primaryColor: "#fff"
+},
+{
+    background: "#000",
+    color: "#fff",
+    primaryColor: "#000"
+},
+  {
       background: "#1A1A2E",
       color: "#FFFFFF",
       primaryColor: "#0F3460"
@@ -26,16 +36,6 @@ const themes = [
       background: "#192A51",
       color: "#FFFFFF",
       primaryColor: "#967AA1"
-  },
-  {
-      background: "#F7B267",
-      color: "#000000",
-      primaryColor: "#F4845F"
-  },
-  {
-      background: "#F25F5C",
-      color: "#000000",
-      primaryColor: "#642B36"
   },
   {
       background: "#231F20",

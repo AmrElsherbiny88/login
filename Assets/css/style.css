@@ -70,11 +70,11 @@ body {
     background: var(--background);
     color: var(--color);
     letter-spacing: 1px;
-    transition: background 0.2s ease;
-    -webkit-transition: background 0.2s ease;
-    -moz-transition: background 0.2s ease;
-    -ms-transition: background 0.2s ease;
-    -o-transition: background 0.2s ease;
+    transition: background 0.5s ease;
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease;
+    -ms-transition: background 0.5s ease;
+    -o-transition: background 0.5s ease;
 }
 
 a {
@@ -90,7 +90,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+   
 }
 
 .login-container {
@@ -118,7 +118,7 @@ h1 {
     color: var(--color);
     outline: none;
     background-color: #0000001f;
-    border: none;
+    border: 2px solid red;
     border-radius: 5px;
     font-weight: 500;
     letter-spacing: 0.8px;
@@ -150,7 +150,7 @@ h1 {
     cursor: pointer;
     margin-bottom: 2rem;
     transition: all 0.1s ease-in-out;
-    border: none;
+    border: 2px solid red;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
@@ -266,3 +266,84 @@ h1 {
         -o-transform: scale(1);
     }
 }
+
+.error {
+    color: red;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+
+
+/* header start */
+
+  
+  .ms-header__title {
+   
+   
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    
+    font-family: sans-serif;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+  }
+  
+  .ms-slider {
+    display: inline-block;
+    height: 1.5em;
+    overflow: hidden;
+    vertical-align: middle;
+    -webkit-mask-image: linear-gradient(transparent, white, white, white, transparent);
+            mask-image: linear-gradient(transparent, white, white, white, transparent);
+    mask-type: luminance;
+    mask-mode: alpha;
+  }
+  .ms-slider__words {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    -webkit-animation-name: wordSlider;
+            animation-name: wordSlider;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 7s;
+            animation-duration: 7s;
+  }
+  .ms-slider__word {
+    display: block;
+    line-height: 1.5em;
+    
+  }
+  
+  @-webkit-keyframes wordSlider {
+    0%, 27% {
+      transform: translateY(0%);
+    }
+    33%, 60% {
+      transform: translateY(-50%);
+    }
+    66%, 100% {
+      transform: translateY(-90%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  
+  @keyframes wordSlider {
+    0%, 27% {
+      transform: translateY(0%);
+    }
+    33%, 60% {
+      transform: translateY(-50%);
+    }
+    66%, 93% {
+      transform: translateY(-90%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
