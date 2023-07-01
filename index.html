@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- Font Awesome -->
+     <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+   />
+    <link rel="stylesheet" href="Assets\Bootstrap\cdn.jsdelivr.net_npm_bootstrap@5.0.2_dist_css_bootstrap.min.css">
+    <link rel="stylesheet" href="Assets\css\style.css">
+</head>
+<body>
+    
+        <!-- loading page start -->
+        <div class="loader">
+          <div>
+              <h1 class="me-3 text-light">Site Name</h1>
+          </div>
+
+      </div>
+      <!-- loading page end -->
+
+
+  <!-- Navbar start -->
+  <nav class="container-fluid  col-xl-12 col-lg-12 col-md-12 col-sm-12   Navbar">
+    <div class="row">
+      <div class=" col-xl-6 col-lg-6 col-md-6 col-sm-6 nav-title">
+        <h5>Site Name</h5>
+      </div>
+
+      <div class=" col-xl-6 col-lg-6 col-md-6 col-sm-6 Nav-links d-flex ">
+          <a href="" class="me-3 mt-2 ms-auto"><h6>About Us</h6></a>
+          <a href="" class="me-3 mt-2"><h6>Fav.Posts</h6></a>
+          <a href="" class="me-3"><img src="Assets\Images\Profile-pic.jpg" alt=""></a>
+          <a href="" class="mt-2"><h6>User Name</h6></a> 
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+
+
+
+  <!-- add post start -->
+  <section class="container mt-5 col-xl-12 col-lg-12 col-md-12 col-sm-12  Add-Posts" >
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger me-auto add-but" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Add a Post
+</button>
+
+<!-- Modal -->
+<div class="modal fade mt-5 pt-5" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark" id="staticBackdropLabel">Add a Post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- post text  -->
+        <input type="text" placeholder="Post-Content" class="Post-Content"><br>
+        <!-- category of post -->
+       
+        <body class="flex flex-col items-center py-16 bg-gray-100">
+          <p class="text-dark mt-3">Choose post's category</p>
+          <ul id="filter1" class="filter-switch inline-flex items-center relative h-10 p-1 space-x-1 bg-gray-200 rounded-md font-semibold text-blue-600 my-4">
+            <li class="filter-switch-item flex relative h-8 bg-gray-300x">
+              <input type="radio" name="filter1" id="filter1-0" value="All"  checked>
+              <label for="filter1-0" class="h-8 py-1 px-2 text-sm leading-6 text-dark hover:text-gray-800 bg-white rounded shadow">
+                All
+              </label>
+              <div aria-hidden="true" class="filter-active"></div>
+            </li>
+            <li class="filter-switch-item flex relative h-8 bg-gray-300x mt-3">
+              <input type="radio" name="filter1" id="filter1-1" value="Technology" >
+              <label for="filter1-1" class="h-8 py-1 px-2 text-sm leading-6 text-dark hover:text-gray-800 bg-white rounded shadow">
+                Technology
+              </label>
+            </li>
+            <li class="filter-switch-item flex relative h-8 bg-gray-300x mt-3">
+              <input type="radio" name="filter1" id="filter1-2" value="Sports" >
+              <label for="filter1-2" class="h-8 py-1 px-2 text-sm leading-6 text-dark hover:text-gray-800 bg-white rounded shadow">
+                Sports
+              </label>
+            </li>
+            <li class="filter-switch-item flex relative h-8 bg-gray-300x mt-3">
+              <input type="radio" name="filter1" id="filter1-3" value="Jop opportunity" >
+              <label for="filter1-3" class="h-8 py-1 px-2 text-sm leading-6 text-dark hover:text-gray-800 bg-white rounded shadow">
+                Jop opportunity
+              </label>
+            </li>
+            <li class="filter-switch-item flex relative h-8 bg-gray-300x mt-3">
+              <input type="radio" name="filter1" id="filter1-4" value="News" >
+              <label for="filter1-3" class="h-8 py-1 px-2 text-sm leading-6 text-dark hover:text-gray-800 bg-white rounded shadow">
+               News
+              </label>
+            </li>
+          </ul>
+        </body>
+
+        <!-- Add Photo -->
+         <span class="text-dark">Add image or file</span>
+         <input type="file" name="add-img" id="add-img">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger">Post</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  </section>
+   <!-- Add post end -->
+
+
+
+<!--  categories start -->
+<section class="categories  d-block">
+  <button id="myBtn" class="cat-mod-butt btn-danger"><p class="cat-p">P <br> o <br>s<br>t <br><br>c<br>a<br>t<br>e<br>g<br>o<br>r<br>i<br>e<br>s</p></button>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal2">
+  
+    <!-- Modal content -->
+    <div class="modal-content2 ">
+      <span class="close2">&times;</span>
+      <!-- categories -->
+      <div id="myBtnContainer">
+       <button class="btnn active" onclick="filterSelection('all')">all</button>
+       <button class="btnn" onclick="filterSelection('Technology')"> Technology</button>
+       <button class="btnn" onclick="filterSelection('Sports')"> Sports</button>
+       <button class="btnn" onclick="filterSelection(' Jop opportunity')">  Jop opportunity</button>
+       <button class="btnn" onclick="filterSelection('News')"> News</button>
+     </div>
+    </div>
+  
+  </div>
+   
+</section>
+  
+<!-- posts start -->
+
+
+<section class="main-posts mt-5">
+  <section class="container-fluid technology-posts filterDiv Technology pb-5">
+    <div class="row justify-content-center align-content-center">
+  
+
+      <!-- technology posts -->
+      <!-- post card -->
+      <div class="card  col-xl-12 col-lg-12 col-md-12 col-sm-12" style="width:85%;">
+        <div class="card-body">
+          <!-- post user img and name -->
+          <div class="post-img d-flex">
+           <img src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
+           <p class="ms-3 mt-3"> AmrElsherbiny</p>
+          </div>
+          <!-- post text content -->
+          <p class="card-text mb-4 mt-3">Technology</p>
+          <!-- like and share buttoms -->
+         <button class="like-btn likebtn" id="like" onclick="likee()" > Like <i class="fa-solid fa-thumbs-up ms-1"></i></button>
+         <button class="like-btn sharebtn ms-3" id="share"  > Share <i class="fa-solid fa-share ms-1"></i></button>
+        </div>
+      </div>
+  
+  
+    </div>
+  </section>
+  
+  <!-- Sports posts -->
+  <section class="container-fluid Sports-posts filterDiv Sports pb-5">
+    <div class="row justify-content-center align-content-center">
+  
+   <!-- post card -->
+      <div class="card col-xl-12 col-lg-12 col-md-12 col-sm-12" style="width:85%;">
+        <div class="card-body">
+          <!-- post user img and name -->
+          <div class="post-img d-flex">
+           <img src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
+           <p class="ms-3 mt-3"> AmrElsherbiny</p>
+          </div>
+          <!-- post text content -->
+          <p class="card-text  mb-4 mt-3">Sports</p>
+       <!-- like and share buttoms -->
+       <button class="like-btn likebtn" id="like" onclick="likee()" > Like <i class="fa-solid fa-thumbs-up ms-1"></i></button>
+       <button class="like-btn sharebtn ms-3" id="share"  > Share <i class="fa-solid fa-share ms-1"></i></button>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  
+  <!-- News posts -->
+  <section class="container-fluid News-posts filterDiv News pb-5">
+    <div class="row justify-content-center align-content-center">
+  
+   <!-- post card -->
+      <div class="card   col-xl-12 col-lg-12 col-md-12 col-sm-12" style="width:85%;">
+        <div class="card-body">
+          <!-- post user img and name -->
+          <div class="post-img d-flex">
+           <img src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
+           <p class="ms-3 mt-3"> AmrElsherbiny</p>
+          </div>
+          <!-- post text content -->
+          <p class="card-text  mb-4 mt-3">News</p>
+          <!-- like and share buttoms -->
+          <button class="like-btn likebtn" id="like" onclick="likee()" > Like <i class="fa-solid fa-thumbs-up ms-1"></i></button>
+          <button class="like-btn sharebtn ms-3" id="share"  > Share <i class="fa-solid fa-share ms-1"></i></button>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  
+  
+  <!-- Jop opportunity posts -->
+  <section class="container-fluid Jop opportunity-posts filterDiv Jop opportunity pb-5">
+    <div class="row justify-content-center align-content-center">
+  
+   <!-- post card -->
+      <div class="card  col-xl-12 col-lg-12 col-md-12 col-sm-12" style="width:85%;">
+        <div class="card-body">
+          <!-- post user img and name -->
+          <div class="post-img d-flex">
+           <img src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
+           <p class="ms-3 mt-3"> AmrElsherbiny</p>
+          </div>
+          <!-- post text content -->
+          <p class="card-text  mb-4 mt-3">Jop opportunity</p>
+          <!-- like and share buttoms -->
+          <button class="like-btn likebtn" id="like" onclick="likee()" > Like <i class="fa-solid fa-thumbs-up ms-1"></i></button>
+          <button class="like-btn sharebtn ms-3" id="share"  > Share <i class="fa-solid fa-share ms-1"></i></button>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- darkmode buttons -->
+    <div class="theme-btn-container"></div>
+    <script src="Assets\js\script.js"></script>
+    <script src="Assets\Bootstrap\cdn.jsdelivr.net_npm_bootstrap@5.0.2_dist_js_bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
