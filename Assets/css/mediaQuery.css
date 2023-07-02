@@ -1,0 +1,11 @@
+@media only screen and (max-width:900px){
+    .card{
+        width: 85%;
+        right: 0px;
+    }
+
+    .post-imgg {
+        height: 250px;
+        width: 250px;
+    }
+}
