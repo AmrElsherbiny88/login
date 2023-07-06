@@ -17,7 +17,7 @@
     justify-content: center;
     background: #000000;
     transition: opacity 0.75s, visibility 0.75s;
-    z-index: 9999;
+    z-index: 9999999999999999;
 }
 
 .loader--hidden {
@@ -651,7 +651,7 @@ nav {
     bottom: 0rem;
     position: fixed;
     left: 0;
-    z-index: 9999999;
+    z-index: 999999;
     
   }
   
