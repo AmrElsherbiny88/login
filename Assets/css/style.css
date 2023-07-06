@@ -72,6 +72,7 @@ body {
     -moz-transition: background 0.7s ease;
     -ms-transition: background 0.7s ease;
     -o-transition: background 0.7s ease;
+    max-height: max-content;
 }
 
 a {
@@ -202,17 +203,22 @@ h1 {
 .theme-btn-container {
     position: absolute;
     position: fixed;
-    left: 0;
-    bottom: 2rem;
+    left: 5%;
+    bottom: 1rem;
+    display: none;
+    
 }
 
 .theme-btn {
     cursor: pointer;
+    border-radius: 50%;
+    margin: 5px;
     transition: all 0.3s ease-in;
 }
 
 .theme-btn:hover {
     width: 40px !important;
+    border-radius: 0%;
 }
 
 @keyframes wobble {
@@ -564,12 +570,23 @@ nav {
     scale: 1.3;
 }
 
-.cate {
-    border: solid 1px rgb(252, 83, 83);
-    border-radius: 5px;
-    padding-left: 10px;
-    padding-right:10px;
-}
+/* post cate. */
+.shadow__btn {
+    border: none;
+    color: #fff;
+    border-radius: 7px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+    width: 200px;
+    height: 25px;
+  }
+  
+  .shadow__btn {
+    background: rgb(252, 83, 83);
+    box-shadow: 0 0 25px rgb(252, 83, 83);
+  }
+
 
 .post-imgg {
     height: 350px;
@@ -587,7 +604,168 @@ nav {
     border-radius: 5px;
 }
 
-#site-nwes {
-    background-color: green;
-}
 
+
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: rgb(9, 174, 9); /* Red */
+    color: white;
+    margin-bottom: 15px;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+    display: none;
+    
+    
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }
+
+
+
+  
+  .button {
+    
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: #5e41de33;
+    border-radius: 20px;
+    cursor: pointer;
+    bottom: 0rem;
+    position: fixed;
+    left: 0;
+    z-index: 9999999;
+    
+  }
+  
+  .lable {
+    font-weight: bolder;
+    font-size: 10px;
+    color: #5D41DE;
+   
+  }
+  
+  .button:hover {
+    background: #5e41de4d;
+  }
+  
+  .button:hover .svg-icon {
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+  /* edit bar start */
+  #checkbox {
+    display: none;
+  }
+  
+  .toggle {
+    position: relative;
+    width: 40px;
+    cursor: pointer;
+    margin: auto;
+    display: block;
+    height: calc(4px * 3 + 11px * 2);
+    scale: 0.8;
+    
+  }
+  
+  .bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: calc(4px / 2);
+    background: rgb(252, 83, 83);
+    color: inherit;
+    opacity: 1;
+    transition: none 0.35s cubic-bezier(.5,-0.35,.35,1.5) 0s;
+    scale: 0.8;
+   
+  }
+  
+  /***** Spin Animation *****/
+  
+  .bar--top {
+    bottom: calc(50% + 11px + 4px/ 2);
+    transition-property: bottom,transform;
+    transition-delay: calc(0s + 0.35s),0s;
+  }
+  
+  .bar--middle {
+    top: calc(50% - 4px/ 2);
+    transition-property: opacity;
+    transition-delay: calc(0s + 0.35s);
+  }
+  
+  .bar--bottom {
+    top: calc(50% + 11px + 4px/ 2);
+    transition-property: top,transform;
+    transition-delay: calc(0s + 0.35s),0s;
+  }
+  
+  #checkbox:checked + .toggle .bar--top {
+    bottom: calc(50% - 4px/ 2);
+    transform: rotate(135deg);
+    transition-delay: 0s,calc(0s + 0.35s);
+  }
+  
+  #checkbox:checked + .toggle .bar--middle {
+    opacity: 0;
+    transition-duration: 0s;
+    transition-delay: calc(0s + 0.35s);
+  }
+  
+  #checkbox:checked + .toggle .bar--bottom {
+    top: calc(50% - 4px/ 2);
+    transform: rotate(225deg);
+    transition-delay: 0s,calc(0s + 0.35s);
+  }
+
+
+  .edit-div {
+    background-color: rgb(66, 66, 66);
+    margin-top: 10px;
+    border-radius: 5px;
+    display: none;
+  }
+
+  .edit-p {
+    transform: all;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .edit-p:hover{
+    transition:0.5s;
+    background-color: rgb(25, 25, 25);
+  }

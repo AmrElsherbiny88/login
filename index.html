@@ -35,7 +35,7 @@
         <a href="" class="me-3 mt-2 ms-auto">
           <h6>About Us</h6>
         </a>
-        
+
         <a href="" class="me-3"><img src="Assets\Images\Profile-pic.jpg" alt=""></a>
         <a href="" class="mt-2">
           <h6>User Name</h6>
@@ -45,8 +45,12 @@
   </nav>
   <!-- Navbar End -->
 
+  <div class="alert mt-5" id="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <h6 id="alert-id"></h6>
+  </div>
 
-  
+
 
 
   <!-- add post start -->
@@ -66,7 +70,7 @@
             <h5 class="modal-title text-dark" id="staticBackdropLabel">Add a Post</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" style="height: max-content;">
             <!-- post text  -->
             <div class="input-group">
               <span class="input-group-text">post content</span>
@@ -120,13 +124,13 @@
                     </li>
                   </ul>
                 </div>
-               
+
               </details>
-           
+
             </body>
 
             <!-- home-fav-btn start -->
-         
+
             <!-- Add Photo -->
             <span class="text-dark">Add image or file</span>
             <input type="file" name="add-img" id="add-img">
@@ -142,7 +146,7 @@
   </section>
   <!-- Add post end -->
 
-<!-- categories start -->
+  <!-- categories start -->
 
 
   <section class="categories  d-block">
@@ -172,24 +176,26 @@
 
   <!-- chang page start -->
   <section class=" col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center mt-5">
-    
-      <div class="homebtn">
-        <button class="change-btn btn-danger me-3"  onclick="change1()">Home</button>
-        <button class="change-btn btn-danger" onclick="change()">Favourit Posts</button>
 
-      </div>
-   
+    <div class="homebtn">
+      <button class="change-btn btn-danger me-3" onclick="change1()">Home</button>
+      <button class="change-btn btn-danger" onclick="change()">Favourit Posts</button>
 
-  </section>  
+    </div>
 
 
+  </section>
 
-  
+
+
 
   <!-- posts start -->
 
 
   <section class="main-posts mt-5 " id="main-posts">
+
+
+    <!-- technology posts -->
     <section class="container-fluid technology-posts filterDiv Technology pb-5">
       <div class="row justify-content-center align-content-center">
 
@@ -199,24 +205,53 @@
         <div class="card pt-3  col-xl-12 col-lg-12 col-md-12 col-sm-12">
           <div class="card-body">
             <!-- post user img and name -->
-            <div class="post-img d-flex">
-              <img src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
-              <p class="ms-3 mt-3"> AmrElsherbiny</p>
-               <!-- categorie name -->
-               <p class="ms-auto mt-3 cate">Technology</p>
-            </div>
-            <div>
+            <div class="post-img d-flex justify-content-between">
+              <div class="d-flex">
+                <img src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
+                <p class="ms-3 mt-3"> AmrElsherbiny</p>
+              </div>
+            
+              <div class="mt-2">
+                <input type="checkbox" id="checkbox" class="ms-auto">
+                <label for="checkbox" class="toggle" id="editt">
+                  <div class="bar bar--top"></div>
+                  <div class="bar bar--middle"></div>
+                  <div class="bar bar--bottom"></div>
+                </label>
+                <div class="ms-auto edit-div" id="edit-div">
+                  <p class="edit-p">Edit</p>
+                  <hr>
+                  <p class="edit-p">Delete</p>
+                </div>
+              </div>
               
+            </div>
+         
+            <div>
+
             </div>
             <!-- post text content -->
             <p class="card-text mb-4 mt-3">Technology</p>
             <!-- post img -->
             <img class="post-imgg mb-4" src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
             <br>
-            <!-- like and share buttoms -->
-            <button class="like-btn likebtn mb-3  mb-3" id="like"> Like <i class="fa-solid fa-thumbs-up ms-1"></i></button>
-            <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
-            <i class="fa-solid fa-heart ms-3"  ></i>
+            <div class="justify-content-xl-between justify-content-lg-between d-lg-flex d-xl-flex">
+              <div>
+                <!-- like and share buttoms -->
+                <button class="like-btn likebtn mb-3" id="like" onclick="likee()"> Like <i
+                    class="fa-solid fa-thumbs-up ms-1"></i></button>
+                <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
+                <i class="fa-solid fa-heart ms-3"></i>
+              </div>
+
+              <!-- categorie name -->
+              <div>
+                <button class="shadow__btn ">
+                  technology
+                </button>
+              </div>
+
+            </div>
           </div>
         </div>
 
@@ -235,18 +270,30 @@
             <div class="post-img d-flex">
               <img src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
               <p class="ms-3 mt-3"> AmrElsherbiny</p>
-              <!-- categorie name -->
-              <p class="ms-auto mt-3 cate">Sports</p>
+
             </div>
             <!-- post text content -->
             <p class="card-text  mb-4 mt-3">Sports</p>
-               <!-- post img -->
-               <img class="post-imgg mb-4" src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
-               <br>
-            <!-- like and share buttoms -->
-            <button class="like-btn likebtn  mb-3" id="like"> Like <i class="fa-solid fa-thumbs-up ms-1"></i></button>
-            <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
-            <i class="fa-solid fa-heart ms-3"></i>
+            <!-- post img -->
+            <img class="post-imgg mb-4" src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
+            <br>
+            <div class="justify-content-xl-between justify-content-lg-between d-lg-flex d-xl-flex">
+              <div>
+                <!-- like and share buttoms -->
+                <button class="like-btn likebtn mb-3" id="like" onclick="likee()"> Like <i
+                    class="fa-solid fa-thumbs-up ms-1"></i></button>
+                <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
+                <i class="fa-solid fa-heart ms-3"></i>
+              </div>
+
+              <!-- categorie name -->
+              <div>
+                <button class="shadow__btn ">
+                  Sports
+                </button>
+              </div>
+
+            </div>
           </div>
         </div>
 
@@ -265,18 +312,29 @@
             <div class="post-img d-flex">
               <img src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
               <p class="ms-3 mt-3"> AmrElsherbiny</p>
-                <!-- categorie name -->
-                <p class="ms-auto mt-3 cate">News</p>
+
             </div>
             <!-- post text content -->
             <p class="card-text  mb-4 mt-3">News</p>
-               <!-- post img -->
-               <img class="post-imgg mb-4" src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
-               <br>
-            <!-- like and share buttoms -->
-            <button class="like-btn likebtn  mb-3" id="like"> Like <i class="fa-solid fa-thumbs-up ms-1"></i></button>
-            <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
-            <i class="fa-solid fa-heart ms-3"></i>
+            <!-- post img -->
+            <img class="post-imgg mb-4" src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
+            <div class="justify-content-xl-between justify-content-lg-between d-lg-flex d-xl-flex">
+              <div>
+                <!-- like and share buttoms -->
+                <button class="like-btn likebtn mb-3" id="like" onclick="likee()"> Like <i
+                    class="fa-solid fa-thumbs-up ms-1"></i></button>
+                <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
+                <i class="fa-solid fa-heart ms-3"></i>
+              </div>
+
+              <!-- categorie name -->
+              <div>
+                <button class="shadow__btn ">
+                  News
+                </button>
+              </div>
+
+            </div>
           </div>
         </div>
 
@@ -296,18 +354,30 @@
             <div class="post-img d-flex">
               <img src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
               <p class="ms-3 mt-3"> AmrElsherbiny</p>
-                <!-- categorie name -->
-                <p class="ms-auto mt-3 cate">Jop opportunity</p>
+
             </div>
             <!-- post text content -->
             <p class="card-text  mb-4 mt-3">Jop opportunity</p>
-               <!-- post img -->
-               <img class="post-imgg mb-4" src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
-               <br>
-            <!-- like and share buttoms -->
-            <button class="like-btn likebtn  mb-3" id="like" onclick="likee()"> Like <i class="fa-solid fa-thumbs-up ms-1"></i></button>
-            <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
-            <i class="fa-solid fa-heart ms-3"></i>
+            <!-- post img -->
+            <img class="post-imgg mb-4" src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
+            <br>
+            <div class="justify-content-xl-between justify-content-lg-between d-lg-flex d-xl-flex">
+              <div>
+                <!-- like and share buttoms -->
+                <button class="like-btn likebtn mb-3" id="like" onclick="likee()"> Like <i
+                    class="fa-solid fa-thumbs-up ms-1"></i></button>
+                <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
+                <i class="fa-solid fa-heart ms-3"></i>
+              </div>
+
+              <!-- categorie name -->
+              <div>
+                <button class="shadow__btn ">
+                  Jop opportunity
+                </button>
+              </div>
+
+            </div>
           </div>
         </div>
 
@@ -330,21 +400,33 @@
             <div class="post-img d-flex">
               <img src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
               <p class="ms-3 mt-3"> AmrElsherbiny</p>
-               <!-- categorie name -->
-               <p class="ms-auto mt-3 cate">Technology</p>
+
             </div>
             <div>
-              
+
             </div>
             <!-- post text content -->
             <p class="card-text mb-4 mt-3">Technology fav</p>
             <!-- post img -->
             <img class="post-imgg mb-4" src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
             <br>
-            <!-- like and share buttoms -->
-            <button class="like-btn likebtn  mb-3" id="like"> Like <i class="fa-solid fa-thumbs-up ms-1"></i></button>
-            <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
-            <i class="fa-solid fa-heart ms-3"  ></i>
+            <div class="justify-content-xl-between justify-content-lg-between d-lg-flex d-xl-flex">
+              <div>
+                <!-- like and share buttoms -->
+                <button class="like-btn likebtn mb-3" id="like" onclick="likee()"> Like <i
+                    class="fa-solid fa-thumbs-up ms-1"></i></button>
+                <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
+                <i class="fa-solid fa-heart ms-3"></i>
+              </div>
+
+              <!-- categorie name -->
+              <div>
+                <button class="shadow__btn ">
+                  Technology
+                </button>
+              </div>
+
+            </div>
           </div>
         </div>
 
@@ -363,18 +445,31 @@
             <div class="post-img d-flex">
               <img src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
               <p class="ms-3 mt-3"> AmrElsherbiny</p>
-              <!-- categorie name -->
-              <p class="ms-auto mt-3 cate">Sports</p>
+
             </div>
             <!-- post text content -->
             <p class="card-text  mb-4 mt-3">Sports fav</p>
-               <!-- post img -->
-               <img class="post-imgg mb-4" src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
-               <br>
+            <!-- post img -->
+            <img class="post-imgg mb-4" src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
+            <br>
             <!-- like and share buttoms -->
-            <button class="like-btn likebtn  mb-3" id="like"> Like <i class="fa-solid fa-thumbs-up ms-1"></i></button>
-            <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
-            <i class="fa-solid fa-heart ms-3"></i>
+            <div class="justify-content-xl-between justify-content-lg-between d-lg-flex d-xl-flex">
+              <div>
+                <!-- like and share buttoms -->
+                <button class="like-btn likebtn mb-3" id="like" onclick="likee()"> Like <i
+                    class="fa-solid fa-thumbs-up ms-1"></i></button>
+                <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
+                <i class="fa-solid fa-heart ms-3"></i>
+              </div>
+
+              <!-- categorie name -->
+              <div>
+                <button class="shadow__btn ">
+                  Sports
+                </button>
+              </div>
+
+            </div>
           </div>
         </div>
 
@@ -393,18 +488,31 @@
             <div class="post-img d-flex">
               <img src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
               <p class="ms-3 mt-3"> AmrElsherbiny</p>
-                <!-- categorie name -->
-                <p class="ms-auto mt-3 cate">News</p>
+
             </div>
             <!-- post text content -->
             <p class="card-text  mb-4 mt-3">News fav</p>
-               <!-- post img -->
-               <img class="post-imgg mb-4" src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
-               <br>
-            <!-- like and share buttoms -->
-            <button class="like-btn likebtn  mb-3" id="like"> Like <i class="fa-solid fa-thumbs-up ms-1"></i></button>
-            <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
-            <i class="fa-solid fa-heart ms-3"></i>
+            <!-- post img -->
+            <img class="post-imgg mb-4" src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
+            <br>
+            <div class="justify-content-xl-between justify-content-lg-between d-lg-flex d-xl-flex">
+              <div>
+                <!-- like and share buttoms -->
+                <button class="like-btn likebtn mb-3" id="like" onclick="likee()"> Like <i
+                    class="fa-solid fa-thumbs-up ms-1"></i></button>
+                <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
+                <i class="fa-solid fa-heart ms-3"></i>
+              </div>
+
+              <!-- categorie name -->
+              <div>
+                <button class="shadow__btn ">
+                  News
+                </button>
+              </div>
+
+            </div>
+
           </div>
         </div>
 
@@ -424,18 +532,32 @@
             <div class="post-img d-flex">
               <img src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
               <p class="ms-3 mt-3"> AmrElsherbiny</p>
-                <!-- categorie name -->
-                <p class="ms-auto mt-3 cate">Jop opportunity</p>
+
             </div>
             <!-- post text content -->
             <p class="card-text  mb-4 mt-3">Jop opportunity fav</p>
-               <!-- post img -->
-               <img class="post-imgg mb-4" src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
-               <br>
-            <!-- like and share buttoms -->
-            <button class="like-btn likebtn mb-3" id="like" onclick="likee()"> Like <i class="fa-solid fa-thumbs-up ms-1"></i></button>
-            <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
-            <i class="fa-solid fa-heart ms-3"></i>
+            <!-- post img -->
+            <img class="post-imgg mb-4" src="Assets\Images\Profile-pic.jpg" alt="" srcset="">
+            <br>
+
+            <div class="justify-content-xl-between justify-content-lg-between d-lg-flex d-xl-flex">
+              <div>
+                <!-- like and share buttoms -->
+                <button class="like-btn likebtn mb-3" id="like" onclick="likee()"> Like <i
+                    class="fa-solid fa-thumbs-up ms-1"></i></button>
+                <button class="like-btn sharebtn ms-3" id="share"> Share <i class="fa-solid fa-share ms-1"></i></button>
+                <i class="fa-solid fa-heart ms-3"></i>
+              </div>
+
+              <!-- categorie name -->
+              <div>
+                <button class="shadow__btn ">
+                  Jop opportunity
+                </button>
+              </div>
+
+            </div>
+
           </div>
         </div>
 
@@ -446,7 +568,6 @@
 
 
 
-  
 
 
 
@@ -464,10 +585,25 @@
 
 
 
+  <button class="button setting " id="setting">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 20 20" height="20" fill="none" class="svg-icon">
+      <g stroke-width="1.5" stroke-linecap="round" stroke="#5d41de">
+        <circle r="2.5" cy="10" cx="10"></circle>
+        <path fill-rule="evenodd"
+          d="m8.39079 2.80235c.53842-1.51424 2.67991-1.51424 3.21831-.00001.3392.95358 1.4284 1.40477 2.3425.97027 1.4514-.68995 2.9657.82427 2.2758 2.27575-.4345.91407.0166 2.00334.9702 2.34248 1.5143.53842 1.5143 2.67996 0 3.21836-.9536.3391-1.4047 1.4284-.9702 2.3425.6899 1.4514-.8244 2.9656-2.2758 2.2757-.9141-.4345-2.0033.0167-2.3425.9703-.5384 1.5142-2.67989 1.5142-3.21831 0-.33914-.9536-1.4284-1.4048-2.34247-.9703-1.45148.6899-2.96571-.8243-2.27575-2.2757.43449-.9141-.01669-2.0034-.97028-2.3425-1.51422-.5384-1.51422-2.67994.00001-3.21836.95358-.33914 1.40476-1.42841.97027-2.34248-.68996-1.45148.82427-2.9657 2.27575-2.27575.91407.4345 2.00333-.01669 2.34247-.97026z"
+          clip-rule="evenodd"></path>
+      </g>
+    </svg>
+    <br>
+    <span class="lable">S <br>e <br>t <br>t <br>i <br>n <br>g <br>s</span>
+  </button>
 
 
   <!-- darkmode buttons -->
-  <div class="theme-btn-container"></div>
+
+  <div class="theme-btn-container" id="theme-btn"></div>
+
+
   <script src="Assets\js\script.js"></script>
   <script src="Assets\Bootstrap\cdn.jsdelivr.net_npm_bootstrap@5.0.2_dist_js_bootstrap.bundle.min.js"></script>
 </body>

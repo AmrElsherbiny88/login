@@ -196,7 +196,8 @@ function change1() {
 // heart favicon 
    var btnToggleee = true;
    var favic = document.querySelectorAll(".fa-heart");
-   var news = document.getElementById("site-nwes")
+   var news = document.getElementById("alert-id")
+   var alert = document.getElementById("alert")
 
    for (let x = 0; x < favic.length; x++) {
     const elementt = favic[x];
@@ -204,10 +205,57 @@ function change1() {
       if (btnToggleee){
         favic[x].style.color = "red";
         btnToggleee = false;
+        news.innerHTML="post added to favourites succesfuly "
+        alert.style.display="block"
         
     } else{
       favic[x].style.color = null;
         btnToggleee = true;
+        news.innerHTML="post removed from favourites succesfuly "
+        alert.style.display="block"
     }
     }}
 
+
+  // theme setting
+    var btnToggleeee = true;
+    var setting = document.querySelectorAll(".setting");
+    var theme = document.getElementById("theme-btn")
+    
+    for (let x = 0; x < setting.length; x++) {
+     const elementt = setting[x];
+     elementt.onclick = function () {
+       if (btnToggleeee){
+        setting[x].style.color = "red";
+        btnToggleeee = false;
+        theme.style.display="block"
+         
+     } else{
+      setting[x].style.color = null;
+         btnToggleeee = true;
+         theme.style.display="none"
+     }
+     }}
+ 
+
+     
+    //  delete and edit post
+    var btnToggleeee = true;
+    var edit = document.querySelectorAll(".toggle");
+    var editdiv = document.getElementById("edit-div")
+    
+    for (let x = 0; x < setting.length; x++) {
+     const elementt = edit[x];
+     elementt.onclick = function () {
+       if (btnToggleeee){
+        edit[x].style.color = "red";
+        btnToggleeee = false;
+        editdiv.style.display="block"
+         
+     } else{
+      edit[x].style.color = null;
+         btnToggleeee = true;
+         editdiv.style.display="none"
+     }
+     }}
+ 
